@@ -2,22 +2,11 @@
 
 ## users テーブル
 
-| Column           | Type    | Options     |
-| ---------------- | ------  | ----------- |
-| nickname         | string  | null: false |
-| email            | string  | null: false |
-| password         | string  | null: false |
-
-### Association
-
-- has_one  :profile
-- has_many :items
-- has_many :purchases
-
-## profiles テーブル
-
 | Column           | Type       | Options     |
 | ---------------- | ---------- | ----------- |
+| nickname         | string     | null: false |
+| email            | string     | null: false |
+| password         | string     | null: false |
 | family_name      | string     | null: false |
 | first_name       | string     | null: false |
 | family_name_kana | string     | null: false |
@@ -25,11 +14,11 @@
 | birth_year       | integer    | null: false |
 | birth_month      | integer    | null: false |
 | birth_day        | integer    | null: false |
-| user             | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
+- has_many :items
+- has_many :purchases
 
 ## items テーブル
 
@@ -43,7 +32,6 @@
 | shipping_prefecture | integer    | null: false |
 | shipping_days       | integer    | null: false |
 | price               | integer    | null: false |
-| stock               | boolean    | null: false |
 | user                | references | null: false, foreign_key: true|
 
 ### Association
@@ -73,7 +61,7 @@
 | buyer_city          | string     | null: false |
 | buyer_home_number   | string     | null: false |
 | buyer_building_name | string     |             |
-| buyer_phone_number  | integer    | null: false |
+| buyer_phone_number  | string     | null: false |
 | purchase            | references | null: false, foreign_key: true |
 
 ### Association
