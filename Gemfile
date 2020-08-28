@@ -6,7 +6,8 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
+# gem 'mysql2', '>= 0.4.4'
+gem 'mysql2', '0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -40,7 +41,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop', require: false
+
 end
 
 group :test do
@@ -49,6 +50,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -56,3 +58,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'rubocop', require: false
+gem 'pry-rails'
+gem 'devise'
+gem 'active_hash'
+gem 'payjp'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'faker-japanese'
+gem 'gimei'

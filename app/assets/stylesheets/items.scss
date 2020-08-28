@@ -1,0 +1,22 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.item-header {
+  margin: 20px auto;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post {
+  margin-left: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border: 2px solid red;
+  background-color: yellow;
+}

@@ -1,0 +1,37 @@
+<div class="whole">
+  <header class="furima">
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+  </header>
+
+  <div class="form-wrap">
+    <div class="form-header">
+      <div class="form-header-text">
+        <p>会員情報入力</p>
+      </div>
+    </div>
+
+      <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :email, 'メールアドレス' %><span class="hissu">必須</span><br />
+          <%= f.email_field :email, placeholder: 'PC・携帯どちらでも可', autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, 'パスワード' %><span class="hissu">必須</span><br />
+          <%= f.password_field :password %>
+        </div>
+
+        <div>
+          <%= f.submit "ログイン", class: 'actions'%>
+        </div>
+
+      <% end %>
+
+  </div>
+
+  <footer class="furima">
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+  </footer>
+
+</div>
