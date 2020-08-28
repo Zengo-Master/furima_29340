@@ -1,0 +1,28 @@
+<div class="item-wrapper">
+  <header class="item-header">
+    <div class="furima-header">
+      <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+    </div>
+    <div class="posts">
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <%= link_to current_user.nickname, "/", class: "post" %>
+          <%= link_to "ログアウト", destroy_user_session_path, class: "post", method: :delete %>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: "post" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+        </div>
+      <% end %>
+    </div>
+  </header>
+
+  <footer class = "item-footer">
+    <div class ="download">
+    </div>
+    <div class="">
+    </div>
+
+  </footer>
+</div>
