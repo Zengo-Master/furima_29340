@@ -179,14 +179,14 @@
 
 .item-lists {
   margin-top: 50px;
-  width: 90% auto;
+  width: 800px auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
 }
 
 .one-item {
-
+  padding: 30px 40px;
 }
 
 .one-item-name {

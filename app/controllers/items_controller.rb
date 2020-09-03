@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -33,22 +34,28 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    return redirect_to root_path
   end
 
   def edit
   end
 
   def update
+    item = Tweet.find(params[:id])
+    item.update(item_params)
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   private
 
   def item_params
     params.require(:item).permit(:image, :name, :description, :category, :status, :shipping_fee_burden, :shipping_prefecture, :shipping_days, :price).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def move_to_index # 未ログインでの先ページアクセスを弾く

@@ -18,9 +18,18 @@
       <%= @item.price %>円
     </div>
 
-    <div>
-      <%= link_to "購入画面に進む", '#', class: "purchase-btn" %>
+    <% if user_signed_in? && current_user.id == @item.user_id  %>
+    <div class="edit">
+      <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "edit-btn" %>
     </div>
+    <div>
+      <%= link_to "商品の削除", item_path(@item.id), method: :delete,  class: "destroy-btn" %>
+    </div>
+    <% elsif current_user.id != @item.user_id  %>
+    <div>
+      <%= link_to "購入画面に進む", new_item_path, class: "purchase-btn" %>
+    </div>
+    <% end %>
 
     <div class="item-table">
       <table border="1" style="border-collapse: collapse">
