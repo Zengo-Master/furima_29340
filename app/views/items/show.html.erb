@@ -1,1 +1,60 @@
-<%# 商品の情報 このページに編集ボタン（出品者のみ）と購入ボタンがある %>
+<div class="whole">
+
+  <div class="furima">
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+  </div>
+
+  <div class="item-show">
+
+    <div class="show-item-name">
+      <%= @item.name %>
+    </div>
+
+    <div class="show-item-image">
+      <%= image_tag @item.image.variant(resize:'300x300') %>
+    </div>
+
+    <div class="show-item-price">
+      <%= @item.price %>円
+    </div>
+
+    <div>
+      <%= link_to "購入画面に進む", '#', class: "purchase-btn" %>
+    </div>
+
+    <div class="item-table">
+      <table border="1" style="border-collapse: collapse">
+        <tr>
+          <th>出品者</th>
+          <td><%= @item.user.nickname %></td>
+        </tr>
+        <tr>
+          <th>カテゴリー</th>
+          <td><%= @item.category_was %></td>
+        </tr>
+        <tr>
+          <th>商品の状態</th>
+          <td><%= @item.status_was %></td>
+        </tr>
+        <tr>
+          <th>配送料の負担</th>
+          <td><%= @item.shipping_fee_burden_was %></td>
+        </tr>
+        <tr>
+          <th>発送元の地域</th>
+          <td><%= @item.shipping_prefecture_was %></td>
+        </tr>
+        <tr>
+          <th>発送日の目安</th>
+          <td><%= @item.shipping_days_was %></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="furima">
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+  </div>
+
+</div>

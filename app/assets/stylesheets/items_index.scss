@@ -1,0 +1,257 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.item-header {
+  margin: 20px auto;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post {
+  margin-left: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border: 2px solid red;
+  background-color: yellow;
+}
+
+.app-top {
+  background-image: url(furima-header01.png);
+  background-size:100%;
+}
+
+.app-top-contents {
+  padding: 30px 150px;
+}
+
+.big-phrase {
+  font-size: 50px;
+  color: white;
+  text-shadow: 1px 2px 3px black;
+}
+
+.small-phrase {
+  margin: 20px 0px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 2px 5px black;
+}
+
+.furima-reasons {
+  margin: 30px 0px;
+}
+
+.furima-reasons-phrase {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.reasons {
+  margin-top: 30px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.reason {
+  width: 250px;
+}
+
+.reason-image {
+  position: relative;
+}
+
+.reason-image p {
+  text-align: center;
+  vertical-align: middle;
+  font-size: xx-large;
+  color: white;
+  height: 50px;
+  width: 50px;
+  background-color: #00CCFF;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.reason-title {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.highlight {
+  color: #00CCFF;
+}
+
+.app-middle {
+  background-image: url(furima-header02.png);
+  background-size:100%;
+}
+
+.middle-contents {
+  padding: 30px 150px;
+}
+
+.app-middle-phrases {
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 2px 3px black;
+  margin-bottom: 30px;
+}
+
+.furima-features {
+  background-color: #EEEEEE;
+  padding: 30px 0px;
+}
+
+.furima-features-phrase {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.features {
+  text-align: center;
+  margin-top: 30px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.feature {
+  width: 300px;
+}
+
+.feature-title {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.new-items {
+  padding: 50px 0px;
+  background-color: white;
+}
+
+.pickup {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.new-link {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: blue;
+  padding: 10px 0px;
+  text-decoration: none;
+}
+
+.sell-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 10px;
+  background-color: #1E90FF
+}
+
+.sell {
+  text-align: center;
+  font-size: large;
+  color: white;
+  padding: 15px 0px 5px 0px;
+}
+
+.camera {
+  padding: 0px 18px 12px 18px;
+}
+
+.item-lists {
+  margin-top: 50px;
+  width: 90% auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.one-item {
+
+}
+
+.one-item-name {
+  margin-top: 20px;
+  font-size: larger;
+}
+
+.one-item-price {
+  margin-top: 10px;
+  font-size: small;
+}
+
+.app-bottom {
+  background-image: url(furima-footer.png);
+  background-size:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.bottom-phrase {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 2px 3px black;
+  padding-bottom: 30px;
+}
+
+.bottom-phrase-1 {
+  font-size: x-large;
+}
+
+.bottom-phrase-2 {
+  font-size: xx-large;
+}
+
+.item-footer {
+  background-color: #333333;
+  color: white;
+}
+
+.furima-infos {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.info {
+  margin: 0px 30px;
+}
+
+.info-title {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.info-item {
+  font-size: small;
+  text-align: center;
+  margin: 10px;
+}
+
+.furima-footer {
+  text-align: center;
+  padding: 30px;
+}
