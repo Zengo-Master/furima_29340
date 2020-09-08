@@ -1,0 +1,97 @@
+.form-wrap-sell {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.form-header-sell {
+  padding: 30px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.input-forms {
+  padding: 50px 100px;
+}
+
+.input-field {
+  margin-bottom: 40px;
+}
+
+.selling-image {
+  
+}
+
+.selling-image-text {
+  padding: 10px 0px;
+}
+
+.item-details {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+}
+
+.details-types {
+  margin-left: 100px;
+}
+
+.item-shipping {
+  margin-top: 50px;
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+}
+
+.shipping-types {
+  margin-left: 85px;
+}
+
+.price-info {
+  margin: 50px 0px;
+}
+
+.price-row {
+  border-bottom: 2px solid lightgray;
+  padding: 10px 10px;
+}
+
+.price-input, .tax-view, .profit-view {
+  float: right;
+}
+
+#price {
+  text-align: right;
+}
+
+#yen {
+  float: right;
+}
+
+.decide {
+  text-align: center;
+}
+
+.decide-btn {
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  font-size: large;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+.back {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  background-color: lightgray;
+  padding: 15px 50px;
+}

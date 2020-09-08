@@ -1,7 +1,8 @@
 <div class="item-wrapper">
+
   <header class="item-header">
     <div class="furima-header">
-      <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+      <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
     </div>
     <div class="posts">
       <% if user_signed_in? %>
@@ -18,11 +19,192 @@
     </div>
   </header>
 
-  <footer class = "item-footer">
-    <div class ="download">
+  <div class="main">
+
+    <div class="app-top">
+      <div class="app-top-contents">
+
+        <div class="app-top-phrases">
+          <p class="big-phrase">人生を変えるフリマアプリ</p>
+          <p class="small-phrase">FURIMAはだれでもかんたんに出品・購入できる<br>フリマアプリです</p>
+        </div>
+
+        <div class="app-images">
+          <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+          <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+        </div>
+
+      </div>
     </div>
-    <div class="">
+
+    <div class="furima-reasons">
+      <p class="furima-reasons-phrase">FURIMAが選ばれる3つの理由</p>
+
+      <div class="reasons">
+
+        <div class="reason">
+          <div class="reason-image">
+            <%= image_tag 'furima-intro01.png', :size =>'250x250' %>
+            <p>1</p>
+          </div>
+          <p class="reason-title"><span class="highlight">3分</span> ですぐに出品</p>
+          スマホで入力するだけで簡単に出品できる！
+        </div>
+
+        <div class="reason">
+          <div class="reason-image">
+            <%= image_tag 'furima-intro02.png', :size =>'250x250' %>
+            <p>2</p>
+          </div>
+          <p class="reason-title"><span class="highlight">シンプル</span> で使いやすい</p>
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        </div>
+
+        <div class="reason">
+          <div class="reason-image">
+            <%= image_tag 'furima-intro03.png', :size =>'250x250' %>
+            <p>3</p>
+          </div>
+          <p class="reason-title">手数料<span class="highlight"> 業界最安</span></p>
+          最大3%でお得に出品&購入！
+        </div>
+
+      </div>
+    </div>
+
+    <div class="app-middle">
+      <div class="middle-contents">
+
+        <div class="app-middle-phrases">
+          <p>FURIMAは、フリマアプリで最も人気。</p>
+          <p>出品・購入回数も業界最多です！</p>
+          <p>ほしかったあの商品に出会えるかもしれません。</p>
+        </div>
+
+        <div class="middle-images">
+            <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+            <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+        </div>
+
+        <div class="">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="furima-features">
+      <p class="furima-features-phrase">FURIMAの特徴</p> 
+
+      <div class="features">
+
+        <div class="feature">
+          <%= image_tag 'furima-intro04.png', :size =>'200x300' %>
+          <p class="feature-title">簡単に売り買いできる</p>
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        </div>
+
+        <div class="feature">
+          <%= image_tag 'furima-intro05.png', :size =>'200x300' %>
+          <p class="feature-title">売上金は即日振込みに対応</p>
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします。
+        </div>
+
+        <div class="feature">
+          <%= image_tag 'furima-intro06.png', :size =>'200x300' %>
+          <p class="feature-title">様々な支払いに対応</p>
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="new-items">
+      <p class="pickup">ピックアップカテゴリー</p>
+      <div class="new-link"><%= link_to '新規投稿商品', new_item_path, class: 'new-link' %></div>
+
+      <div class="sell-btn">
+        <div class="camera">
+          <div class="sell">出品する</div>
+          <%= link_to image_tag("camera.png", width: '60'), new_item_path, class: 'camera' %>
+        </div>
+      </div>
+
+      <div class="item-lists">
+        <% @items.each do |item| %>
+
+          <div class="one-item">
+
+            <div class="one-item-image">
+              <%= image_tag item.image.variant(resize:'200x200') %>
+            </div>
+
+            <div class="one-item-name">
+              <%= link_to item.name, item_path(item.id) %>
+            </div>
+
+            <div class="one-item-price">
+              <%= item.price %>円
+            </div>
+
+          </div>
+          <% end %>
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="app-bottom">
+
+      <div class="bottom-phrase">
+        <p class="bottom-phrase-1">だれでもかんたん、人生を変えるフリマアプリ</p>
+        <p class="bottom-phrase-2">今すぐ無料ダウンロード！</p>
+      </div>
+
+      <div class="app-images">
+        <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+        <%= link_to image_tag("dl-android.png", width: '200'), "#" %>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  </div>
+
+  <footer class = "item-footer">
+    <div class ="furima-infos">
+
+      <div class="info">
+        <p class="info-title">FURIMAについて</p>
+          <p class="info-item">会社概要（運営会社)</p>
+          <p class="info-item">プライバシーポリシー</p>
+          <p class="info-item">FURIMA利用規約</p>
+          <p class="info-item">ポイントに関する特約</p>
+      </div>
+
+      <div class="info">
+        <p class="info-title">FURIMAを見る</p>
+          <p class="info-item">カテゴリー一覧</p>
+          <p class="info-item">ブランド一覧</p>
+        </ul>
+      </div>
+
+      <div class="info">
+        <p class="info-title">FURIMAについて</p>
+          <p class="info-item">FURIMAガイド</p>
+          <p class="info-item">FURIMAロゴ利用ガイドライン</p>
+          <p class="info-item">お知らせ</p>
+      </div>
+
+    </div>
+
+    <div class="furima-footer">
+      <%= link_to image_tag("furima-logo-white.png", width: '150'), root_path %>
     </div>
 
   </footer>
+
 </div>

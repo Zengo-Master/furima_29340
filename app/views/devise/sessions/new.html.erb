@@ -11,7 +11,7 @@
     </div>
 
       <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-
+        <%= render 'error_messages', user: @user %>
         <div class="field">
           <%= f.label :email, 'メールアドレス' %><span class="hissu">必須</span><br />
           <%= f.email_field :email, placeholder: 'PC・携帯どちらでも可', autofocus: true %>
