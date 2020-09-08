@@ -5,8 +5,8 @@ window.addEventListener('load', function(){
   const profit = document.getElementById("profit")
 
     price.addEventListener('keyup', function(){
-      var tax_value = Math.floor(price.value / 10);
-      var profit_value = (price.value - tax_value); 
+      let tax_value = Math.floor(price.value / 10);
+      let profit_value = (price.value - tax_value); 
       tax.innerHTML = tax_value;
       profit.innerHTML = profit_value;
     })
