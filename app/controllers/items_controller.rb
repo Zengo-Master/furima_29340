@@ -42,14 +42,14 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :name, :description, :category, :status, :shipping_fee_burden, :shipping_prefecture, :shipping_days, :price).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :description, :category_id, :status_id, :shipping_fee_burden_id, :shipping_prefecture_id, :shipping_days_id, :price).merge(user_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
 
-  def move_to_index # 未ログインでの先ページアクセスを弾く
+  def move_to_index
     unless user_signed_in?
       redirect_to action: :index
     end
