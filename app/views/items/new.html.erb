@@ -1,7 +1,7 @@
 <div class="whole">
 
   <header class="furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
   </header>
 
   <div class="form-wrap-sell">
@@ -14,7 +14,8 @@
 
     <div class="input-forms">
       <%= form_with(model: @item, local: true) do |f| %>
-
+        <%= render 'error_messages', item: @item %>
+        
         <div class="input-field">
           <%= f.label :image, '出品画像', class: 'selling-image' %><span class="hissu">必須</span><br />
           <p class="selling-image-text">クリックしてファイルをアップロード</p>
@@ -68,7 +69,7 @@
 
             <div class="shipping_prefecture">
               <%= f.label :shipping_prefecture, "発送元の地域" %><span class="hissu">必須</span><br />
-              <%= f.collection_select :shipping_prefecture, Prefecture.all, :name, :name, {} %>
+              <%= f.collection_select :shipping_prefecture, Prefecture.all, :id, :name, {} %>
             </div><br>
 
             <div class="shipping_days">
@@ -80,23 +81,22 @@
 
         </div>
 
-        <div class="price">
+        <div class="price-info">
 
           <div class="price-title">
             <p>販売価格</p>
             <p>(¥300〜9,999,999)</p>
           </div>
 
-          <div class="price-calclation">
+          <div class="price-calculation">
             <div class="price-items">
 
              <div class="price-row">
               <%= f.label :price, '価格' %><span class="hissu">必須</span>
-              <span class="price-input">¥ <%= f.text_field :price, placeholder: '半角数字で入力' %></span>
+              <span class="price-input">¥ <%= f.text_field :price, placeholder: '半角数字で入力', id: 'price' %></span>
              </div>
 
-              <p class="price-row">販売手数料 (10%)<span id="yen"><span id="tax_price"%></span>円</p></span>
-
+              <p class="price-row">販売手数料 (10%)<span id="yen"><span id="tax"></span>円</span></p>
               <p class="price-row">販売利益<span id="yen"><span id="profit"></span>円</span></p>
 
             </div>
@@ -108,12 +108,12 @@
         <p><a href="#">禁止されている出品、行為</a>を必ずご確認ください。またブランド品でシリアルナンバー等がある場合はご記載ください。<a href="#">偽ブランドの販売</a>は犯罪であり処罰される可能性があります。</p>
         <p>また、出品をもちまして<a href="#">加盟店規約</a>に同意したことになります。</p>
 
-        <div class="decide-btn">
-          <%= f.submit "出品する", class: 'decide' %>
+        <div class="decide">
+          <%= f.submit "出品する", class: 'decide-btn' %>
         </div>
 
         <div class="back">
-          <a href = '/'>商品一覧へ戻る</a>
+          <%= link_to "商品一覧へ戻る", root_path, class: "back-btn" %>
         </div>
 
       <% end %>
@@ -122,7 +122,7 @@
   </div>
 
   <footer class = "furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
   </footer>
 
 </div>

@@ -1,7 +1,7 @@
 <div class="whole">
 
   <div class="furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
   </div>
 
   <div class="item-show">
@@ -27,7 +27,7 @@
     </div>
     <% elsif current_user.id != @item.user_id  %>
     <div>
-      <%= link_to "購入画面に進む", new_item_path, class: "purchase-btn" %>
+      <%= link_to "購入画面に進む", new_item_path, method: :get, class: "purchase-btn" %>
     </div>
     <% end %>
 
@@ -63,7 +63,7 @@
   </div>
 
   <div class="furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), "/" %>
+    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
   </div>
 
 </div>

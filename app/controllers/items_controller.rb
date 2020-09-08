@@ -15,20 +15,10 @@ class ItemsController < ApplicationController
 
     if @item.valid?
       @item.save
-      return redirect_to root_path # トップページへ
+      return redirect_to root_path
     else
       render "new"
     end
-  end
-
-  def tax
-    # item_price = Item.find(params[:price]) # 入力された価格のid
-
-    # tax_price = item_price / 10
-    # profit = item_price - tax_price
-
-    # render json: { tax_price: tax_price }
-    # render json: { profit: profit }
   end
 
   def destroy
@@ -41,8 +31,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Tweet.find(params[:id])
+    item = Item.find(params[:id])
     item.update(item_params)
+    return redirect_to item_path(item.id)
   end
 
   def show
