@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    
     return redirect_to root_path
   end
 
