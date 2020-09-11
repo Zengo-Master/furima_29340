@@ -27,7 +27,7 @@
     </div>
     <% elsif user_signed_in? && current_user.id != @item.user_id  %>
     <div>
-      <%= link_to "購入画面に進む", new_item_path, method: :get, class: "purchase-btn" %>
+      <%= link_to "購入画面に進む", item_purchases_path(@item.id), method: :get, class: "purchase-btn" %>
     </div>
     <% end %>
 

@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
-  
+
   def create
     @item = Item.create(item_params)
 
@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
       return redirect_to root_path
     else
       return redirect_to item_path(item.id)
+    end
   end
 
   def edit
