@@ -1,37 +1,41 @@
 class PurchasesController < ApplicationController
+
   def index
+    @purchase = Purchase.new
     @item = Item.find(params[:item_id])
-    
     unless user_signed_in?
-      return redirect_to root_path
+      redirect_to new_user_session_path
+    end
+    if user_signed_in? && current_user.id == @item.user_id
+      redirect_to root_path
     end
   end
 
   def create
-    @purchase = Purchase.new(purchase_params[:item_id.price])
+    @purchase = PurchaseAddress.new(purchase_params)
+    @item = Item.find(params[:item_id])
+    # binding.pry
     if @purchase.valid?
       pay_item
       @purchase.save
-      return redirect_to root_path # 保存できたら元の購入画面へ
+      return redirect_to root_path
     else
-      render 'index' # 元の購入画面からやり直し
+      render "index"
     end
   end
 
-private
+  private
 
   def purchase_params
-    # params.require(:purchase).permit(user_id: current.user_id, item_id: params[:item_id], :token)
-    params.require(:shipping_address).permit(:buyer_postal_code, :buyer_prefecture, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number).merge(purchase_id: params[:purchase_id])
+    params.permit(:user_id, :item_id, :buyer_postal_code, :buyer_prefecture_id, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number, :purchase_id, :token)
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # PAY.JPテスト秘密鍵（コードに直接記述しない）
-    # 支払情報を生成
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
-      amount: price_params[:item_price],  # 商品の値段
-      card: params[:token],    # カードトークン
-      currency:'jpy'                 # 通貨の種類(日本円)
+      amount: @item.price,
+      card: params[:token],
+      currency:'jpy'
     )
   end
 
