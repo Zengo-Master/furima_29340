@@ -12,9 +12,10 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = PurchaseAddress.new(purchase_params)
     @item = Item.find(params[:item_id])
-    # binding.pry
+    # @purchase = PurchaseAddress.new(buyer_postal_code: purchase_params[:buyer_postal_code], buyer_prefecture_id: purchase_params[:buyer_prefecture_id], buyer_city: purchase_params[:buyer_city], buyer_home_number: purchase_params[:buyer_home_number], buyer_building_name: purchase_params[:buyer_building_name], buyer_phone_number: purchase_params[:buyer_phone_number])
+    @purchase = PurchaseAddress.new(purchase_params)
+
     if @purchase.valid?
       pay_item
       @purchase.save
@@ -27,7 +28,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.permit(:user_id, :item_id, :buyer_postal_code, :buyer_prefecture_id, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number, :purchase_id, :token)
+    params.require(:purchase_address).permit(:buyer_postal_code, :buyer_prefecture_id, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number, :token)
   end
 
   def pay_item
