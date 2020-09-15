@@ -178,7 +178,7 @@
 }
 
 .item-lists {
-  margin: 10px 50px;
+  margin: 10px 80px;
   width: 800px auto;
   display: flex;
   flex-wrap: wrap;
@@ -189,14 +189,32 @@
   padding: 20px 20px;
 }
 
+.one-item-image {
+  position: relative;
+}
+
+.sold-out {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: crimson;
+  transform: skewY(-10deg);
+}
+
+.sold-out>span {
+  color: #FFF;
+  font-size: 45px;
+  font: bold;
+}
+
 .one-item-name {
   margin-top: 10px;
-  font-size: larger;
+  font-size: x-large;
 }
 
 .one-item-price {
   margin-top: 10px;
-  font-size: small;
 }
 
 .app-bottom {
