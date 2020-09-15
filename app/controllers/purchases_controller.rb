@@ -15,7 +15,7 @@ class PurchasesController < ApplicationController
     @item = Item.find(params[:item_id])
     # @purchase = PurchaseAddress.new(buyer_postal_code: purchase_params[:buyer_postal_code], buyer_prefecture_id: purchase_params[:buyer_prefecture_id], buyer_city: purchase_params[:buyer_city], buyer_home_number: purchase_params[:buyer_home_number], buyer_building_name: purchase_params[:buyer_building_name], buyer_phone_number: purchase_params[:buyer_phone_number])
     @purchase = PurchaseAddress.new(purchase_params)
-
+    # binding.pry
     if @purchase.valid?
       pay_item
       @purchase.save
@@ -28,7 +28,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_address).permit(:buyer_postal_code, :buyer_prefecture_id, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number, :token)
+    params.require(:purchase).permit(:buyer_postal_code, :buyer_prefecture_id, :buyer_city, :buyer_home_number, :buyer_building_name, :buyer_phone_number, :token).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def pay_item
