@@ -13,9 +13,8 @@ class PurchasesController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    # @purchase = PurchaseAddress.new(buyer_postal_code: purchase_params[:buyer_postal_code], buyer_prefecture_id: purchase_params[:buyer_prefecture_id], buyer_city: purchase_params[:buyer_city], buyer_home_number: purchase_params[:buyer_home_number], buyer_building_name: purchase_params[:buyer_building_name], buyer_phone_number: purchase_params[:buyer_phone_number])
     @purchase = PurchaseAddress.new(purchase_params)
-    # binding.pry
+    
     if @purchase.valid?
       pay_item
       @purchase.save

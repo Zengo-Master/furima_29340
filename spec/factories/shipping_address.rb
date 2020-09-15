@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :purchase_address do
+  factory :shipping_address do
     Faker::Config.locale = :ja
     buyer_postal_code   {Faker::Address.postcode}
     buyer_prefecture_id {Faker::Number.between(from: 1, to: 47)}
