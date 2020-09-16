@@ -1,3 +1,109 @@
-// Place all the styles related to the purchases controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.purchase-contents {
+
+}
+
+.purchase-main {
+  width: 70%;
+  margin: 0 auto;
+  padding: 50px 100px;
+  background-color: white;
+}
+
+.purchase-title-text {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.buy-item-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid #EEEEEE;
+  border-bottom: 2px solid #EEEEEE;
+}
+
+.buy-item-img {
+  padding: 20px;
+}
+
+.buy-item-right-content {
+
+}
+
+.item-price-text {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.buy-item-price {
+
+}
+
+.item-price-text {
+
+}
+
+.item-payment {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid #EEEEEE;
+}
+
+.item-payment-title {
+  font-size: larger;
+}
+
+.item-payment-price {
+  font-size: x-large;
+}
+
+.charge-form {
+  margin: 0px auto;
+}
+
+.credit-card-form {
+  padding: 20px 0px;
+}
+
+.info-input-headline {
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.form-group {
+  padding-top: 25px;
+  width: 40%;
+  margin: auto;
+}
+
+.available-card {
+  width: 40%;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.card-logo {
+  width: 40px;
+  height: 25px;
+}
+
+.shipping-address-form {
+  width: 100%;
+  margin-top: 0px auto;
+  padding: 20px 0px;
+  border-top: 2px solid #EEEEEE;
+}
+
+.ninni {
+  font-size: smaller;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #CCCCCC;
+  border-radius: 10%;
+  padding: 2px;
+  margin-left: 10px;
+}

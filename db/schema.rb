@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_070326) do
+ActiveRecord::Schema.define(version: 2020_08_31_074236) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,13 +31,6 @@ ActiveRecord::Schema.define(version: 2020_09_08_070326) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,15 +59,15 @@ ActiveRecord::Schema.define(version: 2020_09_08_070326) do
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "buyer_postal_code", null: false
-    t.integer "buyer_prefecture", null: false
+    t.integer "buyer_prefecture_id", null: false
     t.string "buyer_city", null: false
     t.string "buyer_home_number", null: false
     t.string "buyer_building_name"
     t.string "buyer_phone_number", null: false
-    t.bigint "purchases_id", null: false
+    t.bigint "purchase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["purchases_id"], name: "index_shipping_addresses_on_purchases_id"
+    t.index ["purchase_id"], name: "index_shipping_addresses_on_purchase_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -99,5 +92,5 @@ ActiveRecord::Schema.define(version: 2020_09_08_070326) do
   add_foreign_key "items", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
-  add_foreign_key "shipping_addresses", "purchases", column: "purchases_id"
+  add_foreign_key "shipping_addresses", "purchases"
 end
