@@ -10,5 +10,6 @@ FactoryBot.define do
     shipping_days_id       {Faker::Number.between(from: 1, to: 3)}
     price                  {Faker::Number.between(from: 300, to: 9999999)}
     association :user
+    image {Rack::Test::UploadedFile.new("spec/fixtures/public/images/star.png")}
   end
 end

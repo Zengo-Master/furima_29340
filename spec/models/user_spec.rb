@@ -48,12 +48,12 @@ RSpec.describe User, type: :model do
       it "passwordが半角英数字混合でなければ登録できないこと" do
         @user.password = "TechCamp"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is not mixed with half-width alphanumeric characters")
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
       it "passwordが存在してもpassword_confirmationが空では登録できないこと" do
         @user.password_confirmation = ""
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include()
       end
       it "family_nameが空だと登録できないこと" do
         @user.family_name = ""
