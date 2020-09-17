@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item.update(item_params)
+    @item.update(item_params)
     return redirect_to item_path(item.id)
   end
 
