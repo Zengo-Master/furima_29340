@@ -21,10 +21,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if item.destroy
+    if @item.destroy
       return redirect_to root_path
     else
-      return redirect_to item_path(item.id)
+      return redirect_to item_path(@item.id)
     end
   end
 
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    return redirect_to item_path(item.id)
+    return redirect_to item_path(@item.id)
   end
 
   def show
