@@ -30,7 +30,7 @@
     <div>
       <%= link_to "商品の削除", item_path(@item.id), method: :delete,  class: "destroy-btn" %>
     </div>
-    <% elsif user_signed_in? && current_user.id != @item.user_id  %>
+    <% elsif user_signed_in? && current_user.id != @item.user_id && Purchase.exists?(item_id: @item.id) == false %>
     <div>
       <%= link_to "購入画面に進む", item_purchases_path(@item.id), method: :get, class: "purchase-btn" %>
     </div>

@@ -14,6 +14,7 @@
 
     <div class="input-forms">
       <%= form_with(model: @item, local: true) do |f| %>
+        <%= render 'error_messages', item: @item %><br/>
 
         <div class="input-field">
           <%= f.label :image, '出品画像', class: 'selling-image' %><span class="hissu">必須</span><br />
