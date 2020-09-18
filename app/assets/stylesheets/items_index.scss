@@ -159,6 +159,7 @@
 }
 
 .sell-btn {
+  z-index: 1;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -178,7 +179,7 @@
 }
 
 .item-lists {
-  margin: 10px 80px;
+  margin: 10px 30px;
   width: 800px auto;
   display: flex;
   flex-wrap: wrap;
@@ -186,7 +187,7 @@
 }
 
 .one-item {
-  padding: 20px 20px;
+  padding: 40px 40px;
 }
 
 .one-item-image {
