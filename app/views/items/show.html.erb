@@ -86,7 +86,7 @@
           <% @reviews.each do |review| %>
             <div class="review">
               <span class="review-user"><%= review.user.nickname %></span>
-              <span class="review-date"><%= review.created_at%></span>
+              <span class="review-date"><%= review.created_at.to_s(:datetime_jp) %></span>
               <p class="review-text"><%= review.text %></p>
             </div>
           <% end %>
