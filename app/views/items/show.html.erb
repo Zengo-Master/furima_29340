@@ -71,13 +71,11 @@
 
     <div class="review-contents">
 
-      <% if current_user %>
+      <% if user_signed_in? && current_user.id != @item.user_id %>
         <%= form_with(model: [@item, @review], local: true, class: "review-form") do |form| %>
           <%= form.text_area :text, placeholder: "口コミを書く", size: "50x5", class: "review-input" %>
           <%= form.submit "投稿する", class: "review-btn" %>
         <% end %>
-      <% else %>
-        <strong><p>※※※ 口コミの投稿にはログインが必要です ※※※</p></strong>
       <% end %>
 
       <h3 class="review-list-text">＜口コミ一覧＞</h3>
