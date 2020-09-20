@@ -1,21 +1,5 @@
-<div class="whole">
-
-  <header class="furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
-  </header>
-
-  <div class="form-wrap-sell">
-
-    <div class="form-header">
-      <div class="form-header-sell">
-        <p>商品情報入力</p>
-      </div>
-    </div>
-
-    <div class="input-forms">
-      <%= form_with(model: @item, local: true) do |f| %>
-        <%= render 'error_messages', item: @item %><br/>
-
+        <%= render 'error_messages', item: @item %><br>
+        
         <div class="input-field">
           <%= f.label :image, '出品画像', class: 'selling-image' %><span class="hissu">必須</span><br />
           <p class="selling-image-text">クリックしてファイルをアップロード</p>
@@ -96,8 +80,8 @@
               <span class="price-input">¥ <%= f.text_field :price, placeholder: '半角数字で入力', id: "price" %></span>
              </div>
 
-              <p class="price-row">販売手数料 (10%)<span id="yen"><span id="tax"><%= @item.price / 10 %></span>円</span></p>
-              <p class="price-row">販売利益<span id="yen"><span id="profit"><%= @item.price - @item.price / 10 %></span>円</span></p>
+              <p class="price-row">販売手数料 (10%)<span id="yen"><span id="tax">0</span>円</span></p>
+              <p class="price-row">販売利益<span id="yen"><span id="profit">0</span>円</span></p>
 
             </div>
 
@@ -109,20 +93,9 @@
         <p>また、出品をもちまして<a href="#">加盟店規約</a>に同意したことになります。</p>
 
         <div class="decide">
-          <%= f.submit "変更する", class: 'decide-btn' %>
+          <%= f.submit "出品する", class: 'decide-btn' %>
         </div>
 
         <div class="back">
-          <%= link_to "戻る", item_path(@item.id), class: "back-btn" %>
+          <%= link_to "商品一覧へ戻る", root_path, class: "back-btn" %>
         </div>
-
-      <% end %>
-    </div>
-
-  </div>
-
-  <footer class = "furima">
-    <%= link_to image_tag("furima-logo-color.png", width: '200'), root_path %>
-  </footer>
-
-</div>

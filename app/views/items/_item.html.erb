@@ -1,0 +1,20 @@
+<div class="one-item">
+
+  <div class="one-item-image">
+    <%= image_tag item.image.variant(resize:'250x250') %>
+    <% if Purchase.exists?(item_id: item.id) %>
+    <div class="sold-out">
+      <span>Sold Out!!</span>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="one-item-name">
+    <%= link_to item.name, item_path(item.id) %>
+  </div>
+
+  <div class="one-item-price">
+    <%= item.price %>円
+  </div>
+
+</div>
