@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order('created_at DESC')
   end
 
   def new
@@ -14,17 +14,17 @@ class ItemsController < ApplicationController
     @item = Item.create(item_params)
     if @item.valid?
       @item.save
-      return redirect_to root_path
+      redirect_to root_path
     else
-      render "new"
+      render 'new'
     end
   end
 
   def destroy
     if @item.destroy
-      return redirect_to root_path
+      redirect_to root_path
     else
-      return redirect_to item_path(@item.id)
+      redirect_to item_path(@item.id)
     end
   end
 
@@ -33,9 +33,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-    return redirect_to item_path(@item.id)
+      redirect_to item_path(@item.id)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -59,9 +59,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
   end
-
 end
