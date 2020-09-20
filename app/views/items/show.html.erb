@@ -69,6 +69,32 @@
       </table>
     </div>
 
+    <div class="review-contents">
+
+      <% if current_user %>
+        <%= form_with(model: [@item, @review], local: true, class: "review-form") do |form| %>
+          <%= form.text_area :text, placeholder: "口コミを書く", size: "50x5", class: "review-input" %>
+          <%= form.submit "投稿する", class: "review-btn" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ 口コミの投稿にはログインが必要です ※※※</p></strong>
+      <% end %>
+
+      <h3 class="review-list-text">＜口コミ一覧＞</h3>
+      <% if @reviews %>
+        <div class="reviews">
+          <% @reviews.each do |review| %>
+            <div class="review">
+              <span class="review-user"><%= review.user.nickname %></span>
+              <span class="review-date"><%= review.created_at%></span>
+              <p class="review-text"><%= review.text %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
   </div>
 
   <div class="furima">

@@ -61,7 +61,7 @@
 }
 
 .item-table {
-  width: 500px auto;
+  width: 50% auto;
 }
 
 th {
@@ -73,4 +73,45 @@ th {
 td {
   width: 400px;
   padding-left: 20px;
+}
+
+.review-contents {
+  width: 70%;
+  margin: 30px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.review-input {
+  margin: 10px;
+}
+
+.review-list-text {
+  margin-top: 30px;
+}
+
+.reviews {
+  margin-top: 10px;
+}
+
+.review {
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.review-user {
+  font-weight: bold;
+  color: blue;
+}
+
+.review-date {
+  margin-left: 5px;
+  font-weight: bold;
+  color: green;
 }
