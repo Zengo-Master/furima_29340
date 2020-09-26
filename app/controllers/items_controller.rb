@@ -40,8 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @review = Review.new
-    @reviews = @item.reviews.includes(:user)
   end
 
   def search
