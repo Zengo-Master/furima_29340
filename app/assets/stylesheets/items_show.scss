@@ -75,42 +75,43 @@ td {
   padding-left: 20px;
 }
 
-.review-contents {
+.comment-contents {
   width: 70%;
   margin: 30px;
 }
 
-.review-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+.message-form {
+  width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-around;
 }
 
-.review-input {
-  margin: 10px;
-}
-
-.review-list-text {
-  margin-top: 30px;
-}
-
-.reviews {
+.textbox {
   margin-top: 10px;
 }
 
-.review {
+.comment-view {
+  margin-top: 30px;
+}
+
+.comments {
+  margin-top: 10px;
+}
+
+.comment {
   margin-top: 10px;
   padding: 5px;
   border: 1px solid black;
 }
 
-.review-user {
+.comment-user {
   font-weight: bold;
   color: blue;
 }
 
-.review-date {
+.comment-date {
   margin-left: 5px;
   font-weight: bold;
   color: green;

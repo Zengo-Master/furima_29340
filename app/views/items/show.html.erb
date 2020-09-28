@@ -73,11 +73,11 @@
       <div class="comment-form">
         <% if user_signed_in? %>
           <h3>コメント投稿</h3>
-          <%= form_with(model: [@item, @comment], local: true) do |f| %>
-            <%= f.text_area :text, placeholder: '不快な言葉遣いなどは退会処分となることがあります。', size: "40x5"  %>
-            <%= f.submit "OK", class: 'comment-btn' %>
+          <%= form_with(model: [@item, @comment], class: "message-form", id: "new_comment", local: true) do |f| %>
+            <%= f.text_area :text, class: "textbox", placeholder: '不快な言葉遣いなどは退会処分となることがあります。', size: "50x5" %><br>
+            <%= f.submit "OK", class: 'form-submit' %>
           <% end %>
-        <% elsif user_ %>
+        <% else %>
           <strong>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</strong>
         <% end %>
       </div>
